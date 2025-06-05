@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión</title>
+    <link rel="icon" type="image/png" href="http://example.com/myicon.png">
+    <link rel="stylesheet" href="/public/login/login.css">
+</head>
+<body>
+    <header>
+        <h1>Inicio de sesión</h1>
+    </header>
+    <div class="container">
+        <div class="containerInputs">
+            <div class="input">
+                <h2>Usuario</h2>
+                <input type="text" id="userInput" placeholder="Usuario">
+            </div>
+            <div class="input">
+                <h2>Contraseña</h2>
+                <input type="password" id="passInput" placeholder="Contraseña">
+            </div>
+            <div class="button">
+                <button onclick="loginUser()">Iniciar sesión</button>
+                <button onclick="registerUser()">Registrarme</button>
+            </div>
+        </div>
+    </div> 
+
+    <script src="/src/login.js"></script>
+</body>
+</html>

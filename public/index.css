@@ -1,0 +1,222 @@
+html {
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    position: relative;
+    background-color: #9b9b9b;
+    color: white;
+    padding: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+header img {
+    width: 5rem;
+    height: auto;
+}
+
+.containerMenuUsuario {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 1rem;
+    align-items: center;
+}
+
+#botonMenuUsuario {
+    background-color: #9b9b9b;
+    border: none;
+}
+
+#botonMenuUsuario img {
+    width: 3rem;
+    height: auto;
+    cursor: pointer;
+}
+
+#menuUsuario {
+    width: max-content;
+    color: black;
+    position: absolute;
+    display: none;
+    margin-top: 6.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: white;
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.4);
+    border-radius: 0.5rem;
+}
+
+#botonCerrarSesion {
+    border-style: none;
+    color: white;
+    background-color: #9b9b9b;
+    border-radius: 0.3rem;
+    width: 5rem;
+    height: 2rem;
+}
+
+#botonCerrarSesion:hover {
+    background-color: rgb(71, 71, 71);
+    cursor: pointer;
+}
+
+#botonFormulario {
+    margin-left: 1rem;
+    margin-top: 1rem;
+    border-style: none;
+    color: white;
+    background-color: #9b9b9b;
+    border-radius: 0.3rem;
+    width: 5rem;
+    height: 2rem;
+}
+
+#botonFormulario:hover {
+    background-color: rgb(71, 71, 71);
+    cursor: pointer;
+}
+
+.formularioExteriorCoche {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 200ms ease-in-out;
+}
+
+.popupFormulario-contenido {
+    background: white;
+    padding: 0 20px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.popupFormulario-header {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.popupFormulario-header h2 {
+    padding-right: 15rem;
+    font-weight: bold;
+}
+
+.popupFormulario-header .boton-cerrar {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.popupFormulario-body {
+    padding-bottom: 1rem;
+}
+
+.popupFormulario-body button {
+    border-style: none;
+    color: white;
+    background-color: #9b9b9b;
+    border-radius: 0.3rem;
+    width: 5rem;
+    height: 2rem;
+}
+
+.popupFormulario-body button:hover {
+    background-color: rgb(71, 71, 71);
+    cursor: pointer;
+}
+
+
+#misCoches {
+    display: none;
+    text-align: center;
+}
+
+#listaCoches {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem 1rem;
+    align-content: space-between;
+    gap: 0.5rem;
+}
+
+.coche {
+    display: flex;
+    flex-direction: column;
+    outline: solid 1px black;
+    border-radius: 0.5rem;
+    background-color: lightgrey;
+}
+
+.coche p {
+    padding: 0.5rem;
+    margin: 0;
+}
+
+.coche img {
+    min-width: 200px;
+    min-height: 200px;
+    max-height: 200px;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+.botonesCoche {
+    display: flex;
+}
+
+#botonVer {
+    border-bottom-left-radius: 0.5rem;
+    border: none;
+    flex-grow: 1;
+    padding: 0.5rem;
+    background-color: rgb(231, 231, 231);
+}
+
+#botonEditar {
+    border: none;
+    flex-grow: 1;
+    padding: 0.5rem;
+    background-color: rgb(231, 231, 231);
+}
+
+#botonEliminar {
+    border-bottom-right-radius: 0.5rem;
+    border: none;
+    flex-grow: 1;
+    padding: 0.5rem;
+    background-color: rgb(231, 231, 231);
+}
+
+#botonVer:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+}
+
+#botonEditar:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+}
+
+#botonEliminar:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+}
