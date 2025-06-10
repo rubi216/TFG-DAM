@@ -35,7 +35,7 @@ async function loginUser() {
     if(respuestaServidor.success)  {
         alert(respuestaServidor.message);
         localStorage.setItem('token', respuestaServidor.token); // Guarda el token
-        window.location.href = "/public/index.html";
+        window.location.href = "/public/index/index.html";
     }
     else {
         alert(respuestaServidor.error);
