@@ -77,6 +77,9 @@ async function mostrarFormulario() {
 
                 <label for="fechaIntervalo">Meses de intervalo de mantenimiento</label><br>
                 <input type="number" class="input" name="fechaIntervalo" id="fechaIntervalo" placeholder="Meses de intervalo de mantenimiento"><br><br>
+
+                <label for="descripcion">Descripción</label><br>
+                <input type="text" class="input" name="descripcion" id="descripcion" placeholder="Descripción"><br><br>
         
                 <label for="foto">Foto</label><br>
                 <input type="file" class="input" name="foto" id="foto" accept="image/*" placeholder="foto"><br><br>
@@ -184,6 +187,7 @@ function mostrarCoches(coches) {
                 <p><b>Año:</b> ${coche.year}</p>
                 <p><b>Último mantenimiento:</b> ${kmUltimoMantenimiento} km y el ${fechaUltimoMantenimiento.toLocaleDateString('es-ES', formatoFecha)}</p>
                 <p><b>Próximo mantenimiento:</b> ${kmProximoMantenimiento} km o el ${fechaProximoMantenimiento.toLocaleDateString('es-ES', formatoFecha)}</p>
+                <p><b>Descripción:</b> ${coche.descripcion}</p>
                 <div class="botonesCoche">
                     <button id="botonVer" data-id="${coche.id}" onclick="verCoche(this)">👁️</button>
                     <button id="botonEditar" data-id="${coche.id}" onclick="editarCoche(this)">✏️</button>
@@ -257,6 +261,7 @@ async function verCoche(botonVer) {
                 <p><b>Año:</b> ${coche.year}</p>
                 <p><b>Último mantenimiento:</b> ${kmUltimoMantenimiento} km y el ${fechaUltimoMantenimiento.toLocaleDateString('es-ES', formatoFecha)}</p>
                 <p><b>Próximo mantenimiento:</b> ${kmProximoMantenimiento} km o el ${fechaProximoMantenimiento.toLocaleDateString('es-ES', formatoFecha)}</p>
+                <p><b>Descripción:</b> ${coche.descripcion}</p>
             </div>
         </div>
     `;
@@ -313,7 +318,7 @@ async function editarCoche(botonEditar) {
 
                 <label for="year">Año</label><br>
                 <input type="number" class="input" name="year" id="year" placeholder="Año"><br><br>
-                
+
                 <label for="kmUltimoMantenimiento">Kilómetros del último mantenimiento</label><br>
                 <input type="number" class="input" name="kmUltimoMantenimiento" id="kmUltimoMantenimiento" placeholder="Kilómetros del último mantenimiento"><br><br>
 
@@ -325,6 +330,9 @@ async function editarCoche(botonEditar) {
 
                 <label for="fechaIntervalo">Meses de intervalo de mantenimiento</label><br>
                 <input type="number" class="input" name="fechaIntervalo" id="fechaIntervalo" placeholder="Meses de intervalo de mantenimiento"><br><br>
+
+                <label for="descripcion">Descripción</label><br>
+                <input type="text" class="input" name="descripcion" id="descripcion" placeholder="Descripción"><br><br>
 
                 <label for="foto">Foto</label><br>
                 <input type="file" class="input" name="foto" id="foto" accept="image/*" placeholder="foto"><br><br>

@@ -42,3 +42,11 @@
 .popup-body {
     padding-bottom: 1rem;
 }
+
+.popup-body input {
+    width: 400px;
+}
+
+#descripcion {
+    height: 100px;
+}

@@ -130,6 +130,14 @@ header img {
     padding-bottom: 1rem;
 }
 
+.popupFormulario-body input {
+    width: 400px;
+}
+
+#descripcion {
+    height: 100px;
+}
+
 .popupFormulario-body button {
     border-style: none;
     color: white;
