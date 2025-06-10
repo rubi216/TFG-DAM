@@ -97,11 +97,11 @@ app.get('/getUser/:userID', verificarToken, async (req, res) => {
 });
 
 app.post('/addCar', verificarToken, upload.single('foto'), (req, res) => {
-    const { userID, matricula, marca, modelo, kilometros, year } = req.body;
+    const { userID, matricula, marca, modelo, kilometros, year, kmUltimoMantenimiento, kmIntervalo, fechaUltimoMantenimiento, fechaIntervalo } = req.body;
     const foto = req.file?.filename;
 
-    const sql = "INSERT INTO cars (user_id, matricula, marca, modelo, kilometros, year, foto) VALUES (?, ?, ?, ?, ?, ?, ?)";
-    db.query(sql, [userID, matricula.toUpperCase(), (marca.charAt(0).toUpperCase() + marca.slice(1)), (modelo.charAt(0).toUpperCase() + modelo.slice(1)), kilometros, year, foto], (err, result) => {
+    const sql = "INSERT INTO cars (user_id, matricula, marca, modelo, kilometros, year, kmUltimoMantenimiento, kmIntervalo, fechaUltimoMantenimiento, fechaIntervalo, foto) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    db.query(sql, [userID, matricula.toUpperCase(), (marca.charAt(0).toUpperCase() + marca.slice(1)), (modelo.charAt(0).toUpperCase() + modelo.slice(1)), kilometros, year, kmUltimoMantenimiento, kmIntervalo, fechaUltimoMantenimiento, fechaIntervalo, foto], (err, result) => {
         if (err) {
             console.log("Error al guardar el coche", err);
             return res.status(500).json({ error: "Error al guardar los datos." });
@@ -148,6 +148,12 @@ app.post('/modifyCar/:id', verificarToken, upload.single('foto'), (req, res) => 
     inputs.modelo = inputs.modelo.charAt(0).toUpperCase() + inputs.modelo.slice(1);
     if (req.body.kilometros) {inputs.kilometros = req.body.kilometros};
     if (req.body.year) {inputs.year = req.body.year};
+
+    if (req.body.kmUltimoMantenimiento) {inputs.kmUltimoMantenimiento = req.body.kmUltimoMantenimiento};
+    if (req.body.kmIntervalo) {inputs.kmIntervalo = req.body.kmIntervalo};
+    if (req.body.fechaUltimoMantenimiento) {inputs.fechaUltimoMantenimiento = req.body.fechaUltimoMantenimiento};
+    if (req.body.fechaIntervalo) {inputs.fechaIntervalo = req.body.fechaIntervalo};
+
     if (foto) {inputs.foto = foto};
 
     if (Object.keys(inputs).length === 0) {

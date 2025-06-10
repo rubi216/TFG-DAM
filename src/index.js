@@ -65,6 +65,18 @@ async function mostrarFormulario() {
         
                 <label for="year">Año</label><br>
                 <input type="number" class="input" name="year" id="year" placeholder="Año"><br><br>
+
+                <label for="kmUltimoMantenimiento">Kilómetros del último mantenimiento</label><br>
+                <input type="number" class="input" name="kmUltimoMantenimiento" id="kmUltimoMantenimiento" placeholder="Kilómetros del último mantenimiento"><br><br>
+
+                <label for="kmIntervalo">Kilómetros de intervalo de mantenimiento</label><br>
+                <input type="number" class="input" name="kmIntervalo" id="kmIntervalo" placeholder="Kilómetros de intervalo de mantenimiento"><br><br>
+
+                <label for="fechaUltimoMantenimiento">Fecha del último mantenimiento</label><br>
+                <input type="date" class="input" name="fechaUltimoMantenimiento" id="fechaUltimoMantenimiento" placeholder="Fecha del último mantenimiento"><br><br>
+
+                <label for="fechaIntervalo">Meses de intervalo de mantenimiento</label><br>
+                <input type="number" class="input" name="fechaIntervalo" id="fechaIntervalo" placeholder="Meses de intervalo de mantenimiento"><br><br>
         
                 <label for="foto">Foto</label><br>
                 <input type="file" class="input" name="foto" id="foto" accept="image/*" placeholder="foto"><br><br>
@@ -147,6 +159,19 @@ function mostrarCoches(coches) {
         const km = coche.kilometros;
         const formato = new Intl.NumberFormat('es-ES');
         const kilometros = formato.format(km);
+
+        const kmUM = coche.kmUltimoMantenimiento;
+        const kmUltimoMantenimiento = formato.format(kmUM);
+        const kmPM = parseInt(kmUM) + parseInt(coche.kmIntervalo);
+        const kmProximoMantenimiento = formato.format(kmPM)
+
+        const fechaUltimoMantenimiento = new Date(coche.fechaUltimoMantenimiento);
+        const fechaIntervalo = parseInt(coche.fechaIntervalo);
+        const fechaProximoMantenimiento = new Date(fechaUltimoMantenimiento);
+        fechaProximoMantenimiento.setMonth(fechaProximoMantenimiento.getMonth() + fechaIntervalo);
+
+        const formatoFecha = { year: 'numeric', month: 'long', day: 'numeric' };
+        
         const div = document.createElement('div');
         div.innerHTML = `
             <link rel="stylesheet" href="/public/index/index.css">
@@ -155,8 +180,10 @@ function mostrarCoches(coches) {
                 <p><b>Matrícula:</b> ${coche.matricula}</p>
                 <p><b>Marca:</b> ${coche.marca}</p>
                 <p><b>Modelo:</b> ${coche.modelo}</p>
-                <p><b>Kilometros:</b> ${kilometros}</p>
+                <p><b>Kilometros:</b> ${kilometros} km</p>
                 <p><b>Año:</b> ${coche.year}</p>
+                <p><b>Último mantenimiento:</b> ${kmUltimoMantenimiento} km y el ${fechaUltimoMantenimiento.toLocaleDateString('es-ES', formatoFecha)}</p>
+                <p><b>Próximo mantenimiento:</b> ${kmProximoMantenimiento} km o el ${fechaProximoMantenimiento.toLocaleDateString('es-ES', formatoFecha)}</p>
                 <div class="botonesCoche">
                     <button id="botonVer" data-id="${coche.id}" onclick="verCoche(this)">👁️</button>
                     <button id="botonEditar" data-id="${coche.id}" onclick="editarCoche(this)">✏️</button>
@@ -200,6 +227,19 @@ async function verCoche(botonVer) {
     const km = coche.kilometros;
     const formato = new Intl.NumberFormat('es-ES');
     const kilometros = formato.format(km);
+
+    const kmUM = coche.kmUltimoMantenimiento;
+    const kmUltimoMantenimiento = formato.format(kmUM);
+    const kmPM = parseInt(kmUM) + parseInt(coche.kmIntervalo);
+    const kmProximoMantenimiento = formato.format(kmPM)
+
+    const fechaUltimoMantenimiento = new Date(coche.fechaUltimoMantenimiento);
+    const fechaIntervalo = parseInt(coche.fechaIntervalo);
+    const fechaProximoMantenimiento = new Date(fechaUltimoMantenimiento);
+    fechaProximoMantenimiento.setMonth(fechaProximoMantenimiento.getMonth() + fechaIntervalo);
+
+    const formatoFecha = { year: 'numeric', month: 'long', day: 'numeric' };
+
     const popup = document.createElement('div');
     popup.classList.add('popup');
     popup.innerHTML = `
@@ -215,6 +255,8 @@ async function verCoche(botonVer) {
                 <img src="/resources/${coche.foto}" alt="Foto de coche">
                 <p><b>Kilómetros:</b> ${kilometros}<br></p>
                 <p><b>Año:</b> ${coche.year}</p>
+                <p><b>Último mantenimiento:</b> ${kmUltimoMantenimiento} km y el ${fechaUltimoMantenimiento.toLocaleDateString('es-ES', formatoFecha)}</p>
+                <p><b>Próximo mantenimiento:</b> ${kmProximoMantenimiento} km o el ${fechaProximoMantenimiento.toLocaleDateString('es-ES', formatoFecha)}</p>
             </div>
         </div>
     `;
@@ -271,6 +313,18 @@ async function editarCoche(botonEditar) {
 
                 <label for="year">Año</label><br>
                 <input type="number" class="input" name="year" id="year" placeholder="Año"><br><br>
+                
+                <label for="kmUltimoMantenimiento">Kilómetros del último mantenimiento</label><br>
+                <input type="number" class="input" name="kmUltimoMantenimiento" id="kmUltimoMantenimiento" placeholder="Kilómetros del último mantenimiento"><br><br>
+
+                <label for="kmIntervalo">Kilómetros de intervalo de mantenimiento</label><br>
+                <input type="number" class="input" name="kmIntervalo" id="kmIntervalo" placeholder="Kilómetros de intervalo de mantenimiento"><br><br>
+
+                <label for="fechaUltimoMantenimiento">Fecha del último mantenimiento</label><br>
+                <input type="date" class="input" name="fechaUltimoMantenimiento" id="fechaUltimoMantenimiento" placeholder="Fecha del último mantenimiento"><br><br>
+
+                <label for="fechaIntervalo">Meses de intervalo de mantenimiento</label><br>
+                <input type="number" class="input" name="fechaIntervalo" id="fechaIntervalo" placeholder="Meses de intervalo de mantenimiento"><br><br>
 
                 <label for="foto">Foto</label><br>
                 <input type="file" class="input" name="foto" id="foto" accept="image/*" placeholder="foto"><br><br>
