@@ -79,7 +79,7 @@ async function mostrarFormulario() {
                 <input type="number" class="input" name="fechaIntervalo" id="fechaIntervalo" placeholder="Meses de intervalo de mantenimiento"><br><br>
 
                 <label for="descripcion">Descripción</label><br>
-                <input type="text" class="input" name="descripcion" id="descripcion" placeholder="Descripción"><br><br>
+                <textarea type="text" class="input" name="descripcion" id="descripcion" placeholder="Descripción"></textarea><br><br>
         
                 <label for="foto">Foto</label><br>
                 <input type="file" class="input" name="foto" id="foto" accept="image/*" placeholder="foto"><br><br>
@@ -332,7 +332,7 @@ async function editarCoche(botonEditar) {
                 <input type="number" class="input" name="fechaIntervalo" id="fechaIntervalo" placeholder="Meses de intervalo de mantenimiento"><br><br>
 
                 <label for="descripcion">Descripción</label><br>
-                <input type="text" class="input" name="descripcion" id="descripcion" placeholder="Descripción"><br><br>
+                <textarea type="text" class="input" name="descripcion" id="descripcion" placeholder="Descripción"></textarea><br><br>
 
                 <label for="foto">Foto</label><br>
                 <input type="file" class="input" name="foto" id="foto" accept="image/*" placeholder="foto"><br><br>
