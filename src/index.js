@@ -149,7 +149,7 @@ function mostrarCoches(coches) {
         const kilometros = formato.format(km);
         const div = document.createElement('div');
         div.innerHTML = `
-            <link rel="stylesheet" href="/public/index.css">
+            <link rel="stylesheet" href="/public/index/index.css">
             <div class="coche">
                 <img src="/resources/${coche.foto}" alt="Foto de coche">
                 <p><b>Matrícula:</b> ${coche.matricula}</p>
