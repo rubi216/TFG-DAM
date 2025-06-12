@@ -199,25 +199,6 @@ function mostrarCoches(coches) {
     });
 }
 
-async function eliminarCoche(botonEliminar) {
-    const token = localStorage.getItem('token');
-    const id = botonEliminar.getAttribute('data-id');
-    const response = await fetch(`http://localhost:3000/deleteCar/${id}`, {
-        method: "DELETE",
-        headers: { "Authorization": token }
-    });
-
-    const datos = await response.json();
-    console.log("Respuesta servidor: ", datos);
-    if(datos.success) {
-        alert("Coche eliminado correctamente");
-        cargarCoches();
-    }
-    else {
-        alert(datos.error);
-    }
-}
-
 async function verCoche(botonVer) {
     const token = localStorage.getItem('token');
     const id = botonVer.getAttribute('data-id');
@@ -390,6 +371,25 @@ async function editarCoche(botonEditar) {
             alert(datos.error);
         }
     });
+}
+
+async function eliminarCoche(botonEliminar) {
+    const token = localStorage.getItem('token');
+    const id = botonEliminar.getAttribute('data-id');
+    const response = await fetch(`http://localhost:3000/deleteCar/${id}`, {
+        method: "DELETE",
+        headers: { "Authorization": token }
+    });
+
+    const datos = await response.json();
+    console.log("Respuesta servidor: ", datos);
+    if(datos.success) {
+        alert("Coche eliminado correctamente");
+        cargarCoches();
+    }
+    else {
+        alert(datos.error);
+    }
 }
 
 document.addEventListener("DOMContentLoaded", cargarCoches);
