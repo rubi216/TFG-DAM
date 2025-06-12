@@ -79,7 +79,7 @@ app.post('/login', async (req, res) => {
             return res.status(401).json({ error: "Datos incorrectos." });
         }
 
-        const token = jwt.sign({ id: user.id, user: user.user, pass: user.pass }, SECRET_KEY, { expiresIn: '10h' });
+        const token = jwt.sign({ id: user.id, user: user.user, pass: user.pass }, SECRET_KEY, { expiresIn: '1h' });
 
         console.log(`Usuario ${user.user} logeado correctamente.`);
         res.status(200).json({ success: true, message: `Usuario ${user.user} logeado correctamente.`, token });
