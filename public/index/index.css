@@ -168,7 +168,7 @@ header img {
 }
 
 .coche {
-    max-width:fit-content;
+    max-width: fit-content;
     display: flex;
     flex-direction: column;
     outline: solid 1px black;
@@ -182,8 +182,8 @@ header img {
 }
 
 .coche img {
-    min-height: 300px;
-    max-height: 300px;
+    min-height: 250px;
+    max-height: 250px;
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
 }
