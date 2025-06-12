@@ -4,9 +4,10 @@ const mysql = require('mysql2');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { error } = require('console');
-const app = express();
 const multer = require('multer');
 const path = require('path');
+
+const app = express();
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
