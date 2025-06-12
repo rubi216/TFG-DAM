@@ -185,8 +185,8 @@ function mostrarCoches(coches) {
                 <p><b>Modelo:</b> ${coche.modelo}</p>
                 <p><b>Kilometros:</b> ${kilometros} km</p>
                 <p><b>Año:</b> ${coche.year}</p>
-                <p><b>Último mantenimiento:</b> ${kmUltimoMantenimiento} km y el ${fechaUltimoMantenimiento.toLocaleDateString('es-ES', formatoFecha)}</p>
-                <p><b>Próximo mantenimiento:</b> ${kmProximoMantenimiento} km o el ${fechaProximoMantenimiento.toLocaleDateString('es-ES', formatoFecha)}</p>
+                <p><b>Último mantenimiento:</b><br>${kmUltimoMantenimiento} km<br>${fechaUltimoMantenimiento.toLocaleDateString('es-ES', formatoFecha)}</p>
+                <p><b>Próximo mantenimiento:</b><br>${kmProximoMantenimiento} km<br>${fechaProximoMantenimiento.toLocaleDateString('es-ES', formatoFecha)}</p>
                 <p><b>Descripción:</b> ${coche.descripcion}</p>
                 <div class="botonesCoche">
                     <button id="botonVer" data-id="${coche.id}" onclick="verCoche(this)">👁️</button>
@@ -257,10 +257,10 @@ async function verCoche(botonVer) {
             </div>
             <div class="popup-body">
                 <img src="/resources/${coche.foto}" alt="Foto de coche">
-                <p><b>Kilómetros:</b> ${kilometros}<br></p>
+                <p><b>Kilómetros:</b> ${kilometros} km<br></p>
                 <p><b>Año:</b> ${coche.year}</p>
-                <p><b>Último mantenimiento:</b> ${kmUltimoMantenimiento} km y el ${fechaUltimoMantenimiento.toLocaleDateString('es-ES', formatoFecha)}</p>
-                <p><b>Próximo mantenimiento:</b> ${kmProximoMantenimiento} km o el ${fechaProximoMantenimiento.toLocaleDateString('es-ES', formatoFecha)}</p>
+                <p><b>Último mantenimiento:</b><br>${kmUltimoMantenimiento} km<br>${fechaUltimoMantenimiento.toLocaleDateString('es-ES', formatoFecha)}</p>
+                <p><b>Próximo mantenimiento:</b><br>${kmProximoMantenimiento} km<br>${fechaProximoMantenimiento.toLocaleDateString('es-ES', formatoFecha)}</p>
                 <p><b>Descripción:</b> ${coche.descripcion}</p>
             </div>
         </div>
